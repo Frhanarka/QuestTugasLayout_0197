@@ -96,87 +96,87 @@ fun Act4(modifier: Modifier = Modifier) {
         )
     }
 }
+
 @Composable
-        fun ProfileCard(
-            nama: String,
-            informasi: String,
-            warnaKartu: Color,
-            warnaNama: Color,
-            warnaInformasi: Color,
-            alamat: String = "",
-            namaBergaya: Boolean = false
+fun ProfileCard(
+    nama: String,
+    informasi: String,
+    warnaKartu: Color,
+    warnaNama: Color,
+    warnaInformasi: Color,
+    alamat: String = "",
+    namaBergaya: Boolean = false
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp),
+        shape = RoundedCornerShape(14.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = warnaKartu
         )
-        {
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(100.dp),
-                shape = RoundedCornerShape(14.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = warnaKartu
-                )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(R.drawable.images),
+                contentDescription = stringResource(R.string.logo_description),
+                modifier = Modifier.size(65.dp)
+            )
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.Center
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(horizontal = 12.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Image(
-                        painter = painterResource(R.drawable.images),
-                        contentDescription = stringResource(R.string.logo_description),
-                        modifier = Modifier.size(65.dp)
+                Text(
+                    text = nama,
+                    fontSize = if (namaBergaya) 19.sp else 20.sp,
+                    fontWeight = if (namaBergaya) {
+                        FontWeight.Normal
+                    } else {
+                        FontWeight.Bold
+                    },
+                    fontFamily = if (namaBergaya) {
+                        FontFamily.Cursive
+                    } else {
+                        FontFamily.Default
+                    },
+                    color = warnaNama,
+                    maxLines = 1
+                )
+
+                Text(
+                    text = informasi,
+                    fontSize = 13.sp,
+                    color = warnaInformasi,
+                    modifier = Modifier.padding(top = 2.dp),
+                    maxLines = 1
+                )
+
+                if (alamat.isNotEmpty()) {
+                    Text(
+                        text = alamat,
+                        fontSize = 13.sp,
+                        color = colorResource(R.color.text_yellow),
+                        modifier = Modifier.padding(top = 5.dp),
+                        maxLines = 1
                     )
+                }
+            }
 
-                    Spacer(modifier = Modifier.width(12.dp))
+            Spacer(modifier = Modifier.width(8.dp))
 
-                    Column(
-                        modifier = Modifier.weight(1f),
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Text(
-                            text = nama,
-                            fontSize = if (namaBergaya) 19.sp else 20.sp,
-                            fontWeight = if (namaBergaya) {
-                                FontWeight.Normal
-                            } else {
-                                FontWeight.Bold
-                            },
-                            fontFamily = if (namaBergaya) {
-                                FontFamily.Cursive
-                            } else {
-                                FontFamily.Default
-                            },
-                            color = warnaNama,
-                            maxLines = 1
-                        )
-
-                        Text(
-                            text = informasi,
-                            fontSize = 13.sp,
-                            color = warnaInformasi,
-                            modifier = Modifier.padding(top = 2.dp),
-                            maxLines = 1
-                        )
-
-                        if (alamat.isNotEmpty()) {
-                            Text(
-                                text = alamat,
-                                fontSize = 13.sp,
-                                color = colorResource(R.color.text_yellow),
-                                modifier = Modifier.padding(top = 5.dp),
-                                maxLines = 1
-                            )
-                        }
-                    }
-
-                    Spacer(modifier = Modifier.width(8.dp))
-
-                    Image(
-                        painter = painterResource(R.drawable.images),
-                        contentDescription = stringResource(R.string.logo_description),
-                        modifier = Modifier.size(65.dp)
-                    )
+            Image(
+                painter = painterResource(R.drawable.images),
+                contentDescription = stringResource(R.string.logo_description),
+                modifier = Modifier.size(65.dp)
+            )
         }
     }
 }
