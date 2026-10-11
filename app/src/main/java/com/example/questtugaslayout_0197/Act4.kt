@@ -66,6 +66,16 @@ fun Act4(modifier: Modifier = Modifier) {
             warnaNama = colorResource(R.color.text_white),
             warnaInformasi = colorResource(R.color.text_cyan)
         )
+        Spacer(modifier = Modifier.height(12.dp))
+
+        ProfileCard(
+            nama = stringResource(R.string.profile_apdan_name),
+            informasi = stringResource(R.string.profile_apdan_phone),
+            alamat = stringResource(R.string.profile_apdan_address),
+            warnaKartu = colorResource(R.color.card_blue),
+            warnaNama = colorResource(R.color.text_white),
+            warnaInformasi = colorResource(R.color.text_cyan)
+        )
     }
 }
 
