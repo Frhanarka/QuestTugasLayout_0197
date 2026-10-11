@@ -94,6 +94,17 @@ fun Act4(modifier: Modifier = Modifier) {
             fontSize = 10.sp,
             modifier = Modifier.padding(bottom = 8.dp)
         )
+
+        @Composable
+        fun ProfileCard(
+            nama: String,
+            informasi: String,
+            warnaKartu: Color,
+            warnaNama: Color,
+            warnaInformasi: Color,
+            alamat: String = "",
+            namaBergaya: Boolean = false
+        ) {
     }
 }
 
