@@ -28,3 +28,11 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
             .background(colorResource(R.color.background_app))
             .padding(horizontal = 16.dp)
             .padding(top = 65.dp),
+        horizontalAlignment = Alignment.CenterHorizontally)
+    {
+        Text(
+            text text = stringResource(R.string.Prodi),
+            fontSize = 28.sp,
+
+        )
+    }
