@@ -37,5 +37,11 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
             color = colorResource(R.color.text_dark)
         )
 
-        Spacer(modifier = Modifier.height(4.dp)
+        Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = stringResource(R.string.Univ),
+                fontSize = 15.sp,
+                fontWeight = FontWeight.Bold,
+                color = colorResource(R.color.text_dark)
+            )
 
