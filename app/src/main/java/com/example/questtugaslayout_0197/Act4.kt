@@ -86,6 +86,14 @@ fun Act4(modifier: Modifier = Modifier) {
             warnaNama = colorResource(R.color.text_white),
             warnaInformasi = colorResource(R.color.text_white)
         )
+        Spacer(modifier = Modifier.weight(1f))
+
+        Text(
+            text = stringResource(R.string.copyright),
+            color = colorResource(R.color.text_dark),
+            fontSize = 10.sp,
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
     }
 }
 
