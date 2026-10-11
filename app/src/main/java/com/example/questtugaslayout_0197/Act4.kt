@@ -27,3 +27,4 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(colorResource(R.color.background_app))
             .padding(horizontal = 16.dp)
+            .padding(top = 65.dp),
