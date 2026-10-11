@@ -21,14 +21,15 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun ActivitasPertama(modifier: Modifier = Modifier) {
+fun Act4(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(colorResource(R.color.background_app))
             .padding(horizontal = 16.dp)
             .padding(top = 65.dp),
-        horizontalAlignment = Alignment.CenterHorizontally)
+        horizontalAlignment = Alignment.CenterHorizontally
+    )
     {
         Text(
             text = stringResource(R.string.Prodi),
@@ -38,13 +39,35 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
         )
 
         Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = stringResource(R.string.Univ),
-                fontSize = 15.sp,
-                fontWeight = FontWeight.Bold,
-                color = colorResource(R.color.text_dark)
-            )
+        Text(
+            text = stringResource(R.string.Univ),
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Bold,
+            color = colorResource(R.color.text_dark)
+        )
 
         Spacer(modifier = Modifier.height(25.dp))
+
+        ProfileCard(
+            nama = stringResource(R.string.profile_farhan_name),
+            informasi = stringResource(R.string.profile_farhan_address),
+            warnaKartu = colorResource(R.color.card_gray),
+            warnaNama = colorResource(R.color.text_white),
+            warnaInformasi = colorResource(R.color.text_yellow),
+            namaBergaya = true
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+
+        ProfileCard(
+            nama = stringResource(R.string.profile_ijul_name),
+            informasi = stringResource(R.string.profile_ijul_phone),
+            alamat = stringResource(R.string.profile_ijul_address),
+            warnaKartu = colorResource(R.color.card_purple),
+            warnaNama = colorResource(R.color.text_white),
+            warnaInformasi = colorResource(R.color.text_cyan)
+        )
+    }
+}
+
 
 
